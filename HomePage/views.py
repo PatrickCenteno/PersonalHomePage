@@ -1,9 +1,10 @@
 from HomePage import app
+from flask import render_template
 
 @app.route('/')
 def index():
 	#TODO display the index.html template
-	return 'Hello World!'
+	return render_template('index.html', response='HERES MY PAGE!')
 
 @app.route('/resume')
 def show_resume():
