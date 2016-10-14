@@ -13,3 +13,7 @@ def show_resume():
 @app.route('/projects')
 def show_projects():
 	return 'list of projects'
+
+@app.route('/admin')
+def admin_page():
+	return 'Admin page goes here'

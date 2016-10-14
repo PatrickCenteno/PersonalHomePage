@@ -38,3 +38,63 @@ def initdb_command():
 
 ''' All Database functions go here '''
 
+''' Adding functions '''
+
+#Add work experience field
+def add_work_experience(place, location, time_period, role, description):
+	db = get_db()
+	db.execute('INSERT into work_experience (place, location, time_period, role, description) values (?,?,?,?,?)', \
+		(place, location, time_period, role, description))
+	db.commit()
+	return 'Added job'
+
+#Add course
+def add_course(course):
+	db = get_db()
+	db.execute('INSERT into courses (course_name) values(?)', (course,))
+	db.commit()
+	return 'Added course'
+
+#Add language
+def add_language(language):
+	db = get_db()
+	db.execute('INSERT into languages (language) values(?)', (language, ))
+	db.commit()
+	return 'Added language'
+
+#Add project
+def add_project(project):
+	db = get_db()
+	db.execute('INSERT into project (project) values(?)', (project,))
+	db.commit()
+	return 'Added project' 
+
+''' Get Functions '''
+
+#Gets all courses
+def get_courses():
+	db = get_db()
+	cursor = db.execute('SELECT * FROM courses')
+	return cursor.fetchall()
+
+#Gets all languages
+def get_languages():
+	db = get_db()
+	cursor = db.execute('SELECT * FROM languages')
+	return cursor.fetchall()
+
+#Gets all work experience
+def get_work_experience():
+	db = get_db()
+	cursor = db.execute('SELECT * FROM work_experience')
+	return cursor.fetchall()
+
+#Gets all projects
+def get_projects():
+	db = get_db()
+	cursor = db.execute('SELECT * FROM projects')
+	return cursor.fetchall()
+
+''' Delete Functions '''
+#TODO
+
