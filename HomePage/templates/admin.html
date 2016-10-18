@@ -2,14 +2,86 @@
 <head>
 	<title>Admin Page</title>
 	<!-- Include whatever css is needed -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-	<!-- passowrd main.js -->
-	<script src="{{ url_for('static', filename='main.js) }}"></script>
+	<!-- password main.js -->
+	<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+	<!-- bootstrap js -->
+	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
 </head>
 <body>
-	
+	<section id="courses">
+		<h1 class="adminHeaders">Course Information</h1>
+			<ul class="list-group">
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">
+					<button type="button" class="btn btn-primary">Add Course</button>
+				</li>
+			</ul>
+
+		<h1 class="adminHeaders">Languages</h1>
+			<ul class="list-group">
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">
+					<button type="button" class="btn btn-primary">Add Language</button>
+				</li>
+			</ul>
+
+		<h1 class="adminHeaders">Work Experience</h1>
+			<ul class="list-group">
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">
+					<button type="button" class="btn btn-primary">Add Work Experience</button>
+				</li>
+			</ul>
+
+		<h1 class="adminHeaders">Projects</h1>
+			<ul class="list-group">
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">Content</li>
+				<li class="list-group-item">
+					<button type="button" class="btn btn-primary">Add Projects</button>
+				</li>
+			</ul>
+	</section>
+
+	<!-- Modal for password -->
+    <div class="modal fade" id="passwordAlertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Restricted!</h4>
+          </div>
+          <div class="modal-body">
+           Enter the password
+           <input type="password" id="modalPasswordBox" name="password">
+           <div id="passwordSubmitAlert" class="alert alert-warning alert-dismissible fade in" role="alert" hidden="hidden">
+			  <strong>Warning</strong> Incorrect Password
+			</div>
+		  </div>
+          <div class="modal-footer">
+            <button id="passwordSubmitButton" type="button" class="btn btn-primary">submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 </body>
 </html>

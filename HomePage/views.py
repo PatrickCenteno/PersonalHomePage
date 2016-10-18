@@ -17,4 +17,5 @@ def show_projects():
 
 @app.route('/admin')
 def admin_page():
-	return 'Admin page goes here'
+	#will have all info from db passed into it
+	return render_template('admin.html', response='test')
