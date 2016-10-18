@@ -25,3 +25,9 @@ create table projects(
 	id integer primary key autoincrement,
 	project_description text not null
 );
+
+drop table if exists pass;
+create table pass(
+	id integer primary key autoincrement,
+	password text not null
+);

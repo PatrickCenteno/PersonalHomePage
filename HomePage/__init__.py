@@ -17,4 +17,6 @@ app.config.from_envvar('HOMEPAGE_SETTINGS', silent=True)
 
 import HomePage.views
 import HomePage.database
+import HomePage.api
+
 

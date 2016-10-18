@@ -40,6 +40,12 @@ def initdb_command():
 
 ''' Adding functions '''
 
+# #temporary function
+# def add_pass_to_db(password):
+# 	db = get_db()
+# 	db.execute('INSERT into pass(password) values (?)', (password, ))
+# 	db.commit()
+
 #Add work experience field
 def add_work_experience(place, location, time_period, role, description):
 	db = get_db()
@@ -93,6 +99,11 @@ def get_work_experience():
 def get_projects():
 	db = get_db()
 	cursor = db.execute('SELECT * FROM projects')
+	return cursor.fetchall()
+
+def get_password():
+	db = get_db()
+	cursor = db.execute('SELECT password FROM pass')
 	return cursor.fetchall()
 
 ''' Delete Functions '''
