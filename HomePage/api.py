@@ -31,7 +31,21 @@ def check_password():
 	else:
 		return 'incorrect password'
 
+# Adds information based on table name what content is provided
+@app.route('/add_info', methods=['POST'])
+def add_info():
+	#table name 
+	table = request.form['table_name']
+	if table == 'courses':
+		database.add_cours(request.form['course_name'])
+		return 'course added'
+	elif table == 'languages':
+		database.add_language(request.form['language'])
+		return 'language added'
+	elif table == 'projects':
+		database.add_project(request.form['project_description'])
+		return 'project added'
+	else:
+		return 'invalid post request'
 
-
-
-
+	#TODO add work experience - its a little more complex 

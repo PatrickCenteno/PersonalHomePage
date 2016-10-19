@@ -15,50 +15,18 @@
 
 </head>
 <body>
-	<section id="courses">
+	<section id="information">
 		<h1 class="adminHeaders">Course Information</h1>
-			<ul class="list-group">
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">
-					<button type="button" class="btn btn-primary">Add Course</button>
-				</li>
-			</ul>
+			<button type="button" id="addCourseButton" class="btn btn-primary">Add Course +</button>
 
 		<h1 class="adminHeaders">Languages</h1>
-			<ul class="list-group">
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">
-					<button type="button" class="btn btn-primary">Add Language</button>
-				</li>
-			</ul>
+			<button type="button" id="addLanguageButton" class="btn btn-primary">Add Language +</button>
 
 		<h1 class="adminHeaders">Work Experience</h1>
-			<ul class="list-group">
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">
-					<button type="button" class="btn btn-primary">Add Work Experience</button>
-				</li>
-			</ul>
-
+			<button type="button" id="addWorkButton" class="btn btn-primary">Add Work Experience +</button>
+			
 		<h1 class="adminHeaders">Projects</h1>
-			<ul class="list-group">
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">Content</li>
-				<li class="list-group-item">
-					<button type="button" class="btn btn-primary">Add Projects</button>
-				</li>
-			</ul>
+			<button type="button" id="addProjectButton" class="btn btn-primary">Add Projects +</button>
 	</section>
 
 	<!-- Modal for password -->
@@ -76,7 +44,49 @@
 			</div>
 		  </div>
           <div class="modal-footer">
-            <button id="passwordSubmitButton" type="button" class="btn btn-primary">submit</button>
+            <button id="passwordSubmitButton" type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for course submission -->
+    <div class="modal fade" id="courseSubmissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Add Course</h4>
+          </div>
+          <div class="modal-body">
+           Enter the course name
+           <input type="input" id="modalCourseSubBox" name="courseSub">
+           <!-- <div id="passwordSubmitAlert" class="alert alert-warning alert-dismissible fade in" role="alert" hidden="hidden">
+			  <strong>Warning</strong> Incorrect Password
+			</div> -->
+		  </div>
+          <div class="modal-footer">
+            <button id="courseSubmitButton" type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for language submission -->
+    <div class="modal fade" id="languageSubmissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Add Course</h4>
+          </div>
+          <div class="modal-body">
+           Enter the language
+           <input type="input" id="modalLanguageSubBox" name="courseSub">
+           <!-- <div id="passwordSubmitAlert" class="alert alert-warning alert-dismissible fade in" role="alert" hidden="hidden">
+			  <strong>Warning</strong> Incorrect Password
+			</div> -->
+		  </div>
+          <div class="modal-footer">
+            <button id="languageSubmitButton" type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
