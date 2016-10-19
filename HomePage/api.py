@@ -45,6 +45,10 @@ def add_info():
 	elif table == 'projects':
 		database.add_project(request.form['project_description'])
 		return 'project added'
+	elif table == 'work_experience'
+		database.add_work_experience(request.form['place'], request.form['location'], \
+				request.form['time_period'], request.form['role'], request.form['description'])
+		return 'Work Info added'
 	else:
 		return 'invalid post request'
 
