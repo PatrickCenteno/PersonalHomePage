@@ -69,9 +69,9 @@ def add_language(language):
 	return 'Added language'
 
 #Add project
-def add_project(project):
+def add_project(project, link):
 	db = get_db()
-	db.execute('INSERT into project (project) values(?)', (project,))
+	db.execute('INSERT into projects (project_description , link) values(?, ?)', (project, link, ))
 	db.commit()
 	return 'Added project' 
 

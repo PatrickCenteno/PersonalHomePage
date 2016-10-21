@@ -34,7 +34,7 @@ $(document).ready( function(){
 
 	// course modoal submit button
 	$("#courseSubmitButton").click( function (){
-		$courseName = $("modalCourseSubBox").val();
+		$courseName = $("#modalCourseSubBox").val();
 
 		if ($.trim($courseName) === "")
 			return; // exit event handler
@@ -45,6 +45,8 @@ $(document).ready( function(){
 			data:{table_name:'courses', course_name:$courseName}
 		}).then(function(response){
 			console.log(response);
+			$("#modalCourseSubBox").val("");
+			$("#courseSubmissionModal").modal("hide");
 			// Add list item
 		});
 	});
@@ -52,12 +54,12 @@ $(document).ready( function(){
 
 	// Add language button
 	$("#addLanguageButton").click( function() {
-		$("#languageSubmissionModal").modal("show")
+		$("#languageSubmissionModal").modal("show");
 	});
 
 	// course modoal submit button
-	$("#courseSubmitButton").click( function (){
-		$language = $("modalLanguageSubBox").val();
+	$("#languageSubmitButton").click( function (){
+		$language = $("#modalLanguageSubBox").val();
 
 		if ($.trim($language) === "")
 			return; // exit event handler
@@ -68,6 +70,69 @@ $(document).ready( function(){
 			data:{table_name:'languages', language:$language}
 		}).then(function(response){
 			console.log(response);
+			$("#modalLanguageSubBox").val("");
+			$("#languageSubmissionModal").modal("hide");
+			// Add list item
+		});
+	});
+
+
+	// Add project button
+	$("#addProjectButton").click( function() {
+		$("#projectSubmissionModal").modal("show");
+	});
+
+	// course modoal submit button
+	$("#projectSubmitButton").click( function (){
+		$project = $("#modalProjectSubBox").val();
+		$projectLink = $("#modalProjectLinkBox").val();
+
+		if ($.trim($project) === "")
+			return; // exit event handler
+
+		$.ajax({
+			type:'post',
+			url:"http://localhost:5000/add_info", // Hardcoded for dev purposes
+			data:{table_name:'projects', project_description:$project, link:$projectLink}
+		}).then(function(response){
+			console.log(response);
+			$("#modalProjectSubBox").val("");
+			$("#modalProjectLinkBox").val("");
+			$("#ProjectSubmissionModal").modal("hide");
+			// Add list item
+		});
+	});
+
+	// Add Work Experience button
+	$("#addWorkButton").click( function() {
+		$("#workSubmissionModal").modal("show");
+	});
+
+	// course modoal submit button
+	$("#workSubmitButton").click( function (){
+
+		$place = $("#modalWorkPlaceBox").val();
+		$location = $("#modalWorkLocationBox").val();
+		$timePeriod= $("#modalWorkTimePeriodBox").val();
+		$role = $("#modalWorkRoleBox").val();
+		$description = $("#modalWorkDescriptionBox").val();
+
+		// if ($.trim($project) === "")
+		// 	return; // exit event handler
+
+		$.ajax({
+			type:'post',
+			url:"http://localhost:5000/add_info", // Hardcoded for dev purposes
+			data:{table_name:'work_experience', place:$place, location:$location, time_period:$timePeriod,
+						role:$role, description:$description}
+		}).then(function(response){
+			console.log(response);
+			$("#modalWorkPlaceBox").val("");
+			$("#modalWorkLocationBox").val("");
+			$("#modalWorkTimePeriodBox").val("");
+			$("#modalWorkRoleBox").val("");
+			$("#modalWorkDescriptionBox").val("");
+			$("#workSubmissionModal").modal("hide");
 			// Add list item
 		});
 	});

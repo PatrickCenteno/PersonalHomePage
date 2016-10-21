@@ -92,6 +92,70 @@
       </div>
     </div>
 
+     <!-- Modal for project submission -->
+    <div class="modal fade" id="projectSubmissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Add Course</h4>
+          </div>
+          <div class="modal-body">
+           Enter the project
+           <textarea class="form-control" rows="8" id="modalProjectSubBox"></textarea>
+           <input type="input" id="modalProjectLinkBox">
+           <!-- <div id="passwordSubmitAlert" class="alert alert-warning alert-dismissible fade in" role="alert" hidden="hidden">
+			  <strong>Warning</strong> Incorrect Password
+			</div> -->
+		  </div>
+          <div class="modal-footer">
+            <button id="projectSubmitButton" type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for work submission -->
+    <div class="modal fade" id="workSubmissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Add Course</h4>
+          </div>
+          <div class="modal-body">
+           Enter the work experience info
+           <ul class="list-group">
+           		<li class="list-group-item">
+           			Place
+           			<input type="input" id="modalWorkPlaceBox">
+           		</li>
+           		<li class="list-group-item">
+           			Location
+           			<input type="input" id="modalWorkLocationBox">
+           		</li>
+           		<li class="list-group-item">
+           			Time-Period
+           			<input type="input" id="modalWorkTimePeriodBox">
+           		</li>
+           		<li class="list-group-item">
+           			Role
+           			<input type="input" id="modalWorkRoleBox">
+           		</li>
+           		<li class="list-group-item">
+           			Description
+           			<textarea class="form-control" rows="8" id="modalWorkDescriptionBox"></textarea>
+           		</li>
+           	</ul>
+           <!-- <div id="passwordSubmitAlert" class="alert alert-warning alert-dismissible fade in" role="alert" hidden="hidden">
+			  <strong>Warning</strong> Incorrect Password
+			</div> -->
+		  </div>
+          <div class="modal-footer">
+            <button id="workSubmitButton" type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 </body>
 </html>

@@ -37,19 +37,25 @@ def add_info():
 	#table name 
 	table = request.form['table_name']
 	if table == 'courses':
-		database.add_cours(request.form['course_name'])
+		database.add_course(request.form['course_name'])
 		return 'course added'
 	elif table == 'languages':
 		database.add_language(request.form['language'])
 		return 'language added'
 	elif table == 'projects':
-		database.add_project(request.form['project_description'])
+		database.add_project(request.form['project_description'], request.form['link'])
 		return 'project added'
-	elif table == 'work_experience'
+	elif table == 'work_experience':
 		database.add_work_experience(request.form['place'], request.form['location'], \
 				request.form['time_period'], request.form['role'], request.form['description'])
 		return 'Work Info added'
 	else:
 		return 'invalid post request'
 
-	#TODO add work experience - its a little more complex 
+
+# @app.route('/add_table')
+# def add_table():
+# 	db = database.get_db()
+# 	db.execute('ALTER TABLE projects ADD link text')
+# 	db.commit()
+# 	return 'added link to projects'
