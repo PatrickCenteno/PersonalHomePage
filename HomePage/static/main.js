@@ -143,26 +143,58 @@ $(document).ready( function(){
 
 	// Course
 	$(".courses").click( function (){
-		console.log("courses clicked");
-		console.log("id is " + $(this).children("input").attr("value"));
+		$idNum = $(this).children("input").attr("value");
+		$tableName = "courses";
+
+		$.ajax({
+			type:'post',
+			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
+			data:{table_name:$tableName, id_num:$idNum}
+		}).then(function(response){
+			console.log(response);
+		});
 	});
 
 	// Languages
 	$(".languages").click( function (){
-	 	console.log("languages clicked");
-	 	console.log("id is " + $(this).children("input").attr("value"));
+	 	$idNum = $(this).children("input").attr("value");
+		$tableName = "languages";
+
+		$.ajax({
+			type:'post',
+			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
+			data:{table_name:$tableName, id_num:$idNum}
+		}).then(function(response){
+			console.log(response);
+		});
 	});
 
 	// Work Experience
 	$(".work_experience").click( function (){
-		console.log("work_experience clicked");
-		console.log("id is " + $(this).children("input").attr("value"));
+		$idNum = $(this).children("input").attr("value");
+		$tableName = "work_experience";
+
+		$.ajax({
+			type:'post',
+			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
+			data:{table_name:$tableName, id_num:$idNum}
+		}).then(function(response){
+			console.log(response);
+		});
 	});
 
 	// Projects
 	$(".projects").click( function (){
-		console.log("projects clicked");
-		console.log("id is " + $(this).children("input").attr("value"));
+		$idNum = $(this).children("input").attr("value");
+		$tableName = "projects";
+
+		$.ajax({
+			type:'post',
+			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
+			data:{table_name:$tableName, id_num:$idNum}
+		}).then(function(response){
+			console.log(response);
+		});
 	});
 
 
