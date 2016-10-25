@@ -17,15 +17,30 @@
 <body>
 	<section id="information">
 		<h1 class="adminHeaders">Course Information</h1>
+      <ul class="list-group courseList">
+      {% for c in course_list %}
+        <li class="list-group-item">{{ c[1] }}</li>
+      </ul>
+      {% endfor %}
 			<button type="button" id="addCourseButton" class="btn btn-primary">Add Course +</button>
 
 		<h1 class="adminHeaders">Languages</h1>
+      <ul class="list-group languageList">
+      {% for l in language_list %}
+        <li class="list-group-item">{{ l[1] }}</li>
+      </ul>
+      {% endfor %}
 			<button type="button" id="addLanguageButton" class="btn btn-primary">Add Language +</button>
 
 		<h1 class="adminHeaders">Work Experience</h1>
 			<button type="button" id="addWorkButton" class="btn btn-primary">Add Work Experience +</button>
 			
 		<h1 class="adminHeaders">Projects</h1>
+      <ul class="list-group projectList">
+      {% for p in project_list   %}
+        <li class="list-group-item">{{ p[1] }} <a href={{ p[2] }}>Link to project</a></li>
+      </ul>
+      {% endfor %}
 			<button type="button" id="addProjectButton" class="btn btn-primary">Add Projects +</button>
 	</section>
 
