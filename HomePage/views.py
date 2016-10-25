@@ -33,4 +33,5 @@ def admin_page():
 	for w in work:
 		print w 
 
-	return render_template('admin.html', course_list=courses, language_list=languages, project_list=projects)
+	return render_template('admin.html', course_list=courses, language_list=languages, \
+			project_list=projects, work_list=work)
