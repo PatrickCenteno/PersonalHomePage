@@ -136,4 +136,35 @@ $(document).ready( function(){
 			// Add list item
 		});
 	});
+
+	/**
+	 * Delete Functions
+	 */
+
+	// Course
+	$(".courses").click( function (){
+		console.log("courses clicked");
+		console.log("id is " + $(this).children("input").attr("value"));
+	});
+
+	// Languages
+	$(".languages").click( function (){
+	 	console.log("languages clicked");
+	 	console.log("id is " + $(this).children("input").attr("value"));
+	});
+
+	// Work Experience
+	$(".work_experience").click( function (){
+		console.log("work_experience clicked");
+		console.log("id is " + $(this).children("input").attr("value"));
+	});
+
+	// Projects
+	$(".projects").click( function (){
+		console.log("projects clicked");
+		console.log("id is " + $(this).children("input").attr("value"));
+	});
+
+
+
 });

@@ -107,5 +107,39 @@ def get_password():
 	return cursor.fetchall()
 
 ''' Delete Functions '''
-#TODO
 
+#Table truncating function
+#If there are no entries in the table, it truncates it so the auto-increment id resets
+def truncate_table(table_name, db):
+	size = db.execute('SELECT MAX(ID) FROM ?', (table_name, ))
+	if size == 0:
+		db.execute('TRUNCATE ?', (table_name, ))
+
+
+#delete course by id
+def delete_course(id_num):
+	db = get_db()
+	db.execute('DELETE FROM courses WHERE ID = ?', (id_num, ))
+	truncate_table('courses', db)
+	return 'Deleted course with id of ' + str(id_num)
+
+#delete language by id
+def delete_language(id_num):
+	db = get_db()
+	db.execute('DELETE FROM languages WHERE ID = ?', (id_num, ))
+	truncate_table('languages', db)
+	return 'Deleted language with an id of' + str(id_num)
+
+#delete work by id
+def delete_work(id_num):
+	db = get_db()
+	db.execute('DELETE FROM work_experience WHERE ID = ?', (id_num, ))
+	truncate_table('work_experience', db)
+	return 'Deleted work with id of ' + str(id_num)
+
+#delete project by id
+def delete_project(id_num):
+	db = get_db()
+	db.execute('DELETE FROM projects WHERE ID = ?', (id_num, ))
+	truncate_table('projects', db)
+	return 'Deleted project with an id of' + str(id_num)

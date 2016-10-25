@@ -52,6 +52,27 @@ def add_info():
 	else:
 		return 'invalid post request'
 
+#delete information based on id number and table name
+@app.route('/delete_info', methods=['POST'])
+def delete_info():
+	#table name
+	table = request.form['table_name']
+	id_num = request.form['id_num']
+	if table == 'courses':
+		database.delete_course(id_num)
+		return 'course removed'
+	elif table == 'languages':
+		database.delete_language(id_num)
+		return 'language removed'
+	elif table == 'projects':
+		database.delete_project(id_num)
+		return 'project added'
+	elif table == 'work_experience':
+		database.delete_work(id_num)
+		return 'Work Info removed'
+	else:
+		return 'invalid post request'
+
 
 # @app.route('/add_table')
 # def add_table():

@@ -19,7 +19,10 @@
 		<h1 class="adminHeaders">Course Information</h1>
       <ul class="list-group courseList">
       {% for c in course_list %}
-        <li class="list-group-item">{{ c[1] }}</li>
+        <li class="list-group-item courses">
+          <div>{{ c[1] }}</div>
+          <input type="hidden" class="adminContentIndex" value={{ c[0] }}>
+        </li>
       {% endfor %}
       </ul>
 			<button type="button" id="addCourseButton" class="btn btn-primary">Add Course +</button>
@@ -27,7 +30,10 @@
 		<h1 class="adminHeaders">Languages</h1>
       <ul class="list-group languageList">
       {% for l in language_list %}
-        <li class="list-group-item">{{ l[1] }}</li>
+        <li class="list-group-item languages">
+          <div>{{ l[1] }}</div>
+          <input type="hidden" class="adminContentIndex" value={{ l[0] }}>
+        </li>
       {% endfor %}
        </ul>
 			<button type="button" id="addLanguageButton" class="btn btn-primary">Add Language +</button>
@@ -35,12 +41,13 @@
 		<h1 class="adminHeaders">Work Experience</h1>
       <ul class="list-group workList">
       {% for w in work_list %}
-        <li class="list-group-item">
+        <li class="list-group-item work_experience">
           <div>{{ w[1] }}</div>
           <div>{{ w[2] }}</div>
           <div>{{ w[3] }}</div>
           <div>{{ w[4] }}</div>
           <div>{{ w[5] }}</div>
+          <input type="hidden" class="adminContentIndex" value={{ w[0] }}>
         </li>
       {% endfor %}
        </ul>
@@ -49,7 +56,10 @@
 		<h1 class="adminHeaders">Projects</h1>
       <ul class="list-group projectList">
       {% for p in project_list   %}
-        <li class="list-group-item">{{ p[1] }} <a href={{ p[2] }}>Link to project</a></li>
+        <li class="list-group-item projects">
+          {{ p[1] }} <a href={{ p[2] }}>Link to project</a>
+          <input type="hidden" class="adminContentIndex" value={{ p[0] }}>
+        </li>
       {% endfor %}
       </ul>
 			<button type="button" id="addProjectButton" class="btn btn-primary">Add Projects +</button>
