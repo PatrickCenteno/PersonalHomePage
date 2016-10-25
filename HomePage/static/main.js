@@ -152,6 +152,7 @@ $(document).ready( function(){
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
 			console.log(response);
+			window.location.href = "http://localhost:5000/admin";
 		});
 	});
 
@@ -166,6 +167,7 @@ $(document).ready( function(){
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
 			console.log(response);
+			window.location.href = "http://localhost:5000/admin";
 		});
 	});
 
@@ -180,6 +182,7 @@ $(document).ready( function(){
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
 			console.log(response);
+			window.location.href = "http://localhost:5000/admin";
 		});
 	});
 
@@ -194,6 +197,7 @@ $(document).ready( function(){
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
 			console.log(response);
+			window.location.href = "http://localhost:5000/admin";
 		});
 	});
 
