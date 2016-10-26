@@ -10,20 +10,23 @@ def index():
 
 @app.route('/education')
 def show_education():
- 	#TODO show the resume page 
-	return 'Here\'s my resume'
+	courses = database.get_courses()
+	return render_template('education.html', course_list=courses)
 
 @app.route('/projects')
 def show_projects():
-	return 'list of projects'
+	projects = database.get_projects()
+	return render_template('projects.html', project_list=projects)
 
 @app.route('/work')
 def show_work():
-	return 'work'
+	work = database.get_work_experience()
+	return render_template('work.html', work_list=work)
 
-@app.route('/language')
+@app.route('/languages')
 def show_languages():
-	return 'languages'
+	languages = database.get_languages()
+	return render_template('languages.html', language_list=languages)
 
 @app.route('/admin')
 def admin_page():

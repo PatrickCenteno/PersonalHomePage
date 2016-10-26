@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Projects</title>
+	<!-- Include whatever css is needed -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+	<!-- style page -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+	<!-- animations css page from http://www.justinaguilar.com/animations/# -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animations.css') }}">
+
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- bootstrap js -->
+	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+</head>
+<body>
+	<section id="header">
+		<div id="nameTitle">
+			<h1 id="nameHeader">Patrick Centeno</h1>
+		</div>
+	</section>
+
+	<section id="content">
+		{% for p in project_list %}
+			<h3 class="contentList slideLeft">{{ p[1] }}</h3>
+		{% endfor %}
+	</section>
+
+</body>
+</html>
