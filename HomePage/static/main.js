@@ -44,7 +44,6 @@ $(document).ready( function(){
 			url:"http://localhost:5000/add_info", // Hardcoded for dev purposes
 			data:{table_name:'courses', course_name:$courseName}
 		}).then(function(response){
-			console.log(response);
 			$("#modalCourseSubBox").val("");
 			$("#courseSubmissionModal").modal("hide");
 			// Add list item
@@ -69,7 +68,6 @@ $(document).ready( function(){
 			url:"http://localhost:5000/add_info", // Hardcoded for dev purposes
 			data:{table_name:'languages', language:$language}
 		}).then(function(response){
-			console.log(response);
 			$("#modalLanguageSubBox").val("");
 			$("#languageSubmissionModal").modal("hide");
 			// Add list item
@@ -95,7 +93,6 @@ $(document).ready( function(){
 			url:"http://localhost:5000/add_info", // Hardcoded for dev purposes
 			data:{table_name:'projects', project_description:$project, link:$projectLink}
 		}).then(function(response){
-			console.log(response);
 			$("#modalProjectSubBox").val("");
 			$("#modalProjectLinkBox").val("");
 			$("#ProjectSubmissionModal").modal("hide");
@@ -126,7 +123,6 @@ $(document).ready( function(){
 			data:{table_name:'work_experience', place:$place, location:$location, time_period:$timePeriod,
 						role:$role, description:$description}
 		}).then(function(response){
-			console.log(response);
 			$("#modalWorkPlaceBox").val("");
 			$("#modalWorkLocationBox").val("");
 			$("#modalWorkTimePeriodBox").val("");
@@ -151,7 +147,6 @@ $(document).ready( function(){
 			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
-			console.log(response);
 			window.location.href = "http://localhost:5000/admin";
 		});
 	});
@@ -166,7 +161,6 @@ $(document).ready( function(){
 			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
-			console.log(response);
 			window.location.href = "http://localhost:5000/admin";
 		});
 	});
@@ -181,7 +175,6 @@ $(document).ready( function(){
 			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
-			console.log(response);
 			window.location.href = "http://localhost:5000/admin";
 		});
 	});
@@ -196,11 +189,7 @@ $(document).ready( function(){
 			url:"http://localhost:5000/delete_info", //hardcoded for dev purposes
 			data:{table_name:$tableName, id_num:$idNum}
 		}).then(function(response){
-			console.log(response);
 			window.location.href = "http://localhost:5000/admin";
 		});
 	});
-
-
-
 });
