@@ -1,4 +1,23 @@
 $(document).ready( function(){
+	/**
+	 * Main site content
+	 */
+
+	/**
+	 * Right now this is unneccessary
+	 */
+	// Iterates through each element in the content list class and adds slideLeft to it
+	// Purpose being that they dont all slide in at once
+	// $(".contentList").each( function(){
+	// 	$(this).addClass("slideLeft");
+	// 	//window.setTimeout(function(){}, 1000);
+	// });
+
+
+	/**
+	 * Admin page content
+	 */
+
 	// Add Admin page listeners here
 	// Display passowrd modal on page load
 	$("#passwordAlertModal").modal("show");

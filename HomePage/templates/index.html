@@ -7,6 +7,9 @@
 	<!-- style page -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
+	<!-- animations css page from http://www.justinaguilar.com/animations/# -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animations.css') }}">
+
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -22,15 +25,23 @@
 	</section>
 
 	<section id="aboutMe">
-
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eros mauris, maximus ac est in, dictum porta erat. In pretium augue finibus, porttitor libero eget, pulvinar erat. Aliquam quis pulvinar neque. Nullam quam velit, placerat non purus nec, rutrum semper.
 	</section>
 
-
-<!-- 	{% if response %}
-		<hi>{{ response }}</h1>
-	{% else %}
-		<h1>No response</h1>
-	{% endif %} -->
+	<section id="content">
+		<h3 class="contentList slideLeft">
+			<a href="http://localhost:5000/education">Education</a>
+		</h3>
+		<h3 class="contentList slideLeft">
+			<a href="http://localhost:5000/work">Work Experience</a>
+		</h3>
+		<h3 class="contentList slideLeft">
+			<a href="http://localhost:5000/projects">Personal Projects</a>
+		</h3>
+		<h3 class="contentList slideLeft">
+			<a href="http://localhost:5000/languages">Programming Languages</a>
+		</h3>
+	</section>
 
 </body>
 </html>
