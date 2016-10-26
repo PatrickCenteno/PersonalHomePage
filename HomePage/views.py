@@ -28,6 +28,10 @@ def show_languages():
 	languages = database.get_languages()
 	return render_template('languages.html', language_list=languages)
 
+@app.route('/contact')
+def show_contact_page():
+	return render_template('contact.html')
+
 @app.route('/admin')
 def admin_page():
 	#will have all info from db passed into it
