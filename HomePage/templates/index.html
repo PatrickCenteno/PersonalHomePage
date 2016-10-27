@@ -30,17 +30,24 @@
 
 	<section id="content">
 		<h3 class="contentList slideLeft">
-			<a href="http://localhost:5000/education">Education</a>
+			<a href="{{ url_for('show_education') }}">Education</a>
 		</h3>
 		<h3 class="contentList slideLeft">
-			<a href="http://localhost:5000/work">Work Experience</a>
+			<a href="{{ url_for('show_work') }}">Work Experience</a>
 		</h3>
 		<h3 class="contentList slideLeft">
-			<a href="http://localhost:5000/projects">Personal Projects</a>
+			<a href="{{ url_for('show_projects') }}">Personal Projects</a>
 		</h3>
 		<h3 class="contentList slideLeft">
-			<a href="http://localhost:5000/languages">Programming Languages</a>
+			<a href="{{ url_for('show_languages') }}">Programming Languages</a>
 		</h3>
+	</section>
+
+	<section id="footer">
+		<div id="footerContent">
+			<div><strong>Powered by Flask</strong></div>
+			<a id="contactUrl" href="{{ url_for('show_contact_page') }}">Contact info</a>
+		</div>
 	</section>
 
 </body>

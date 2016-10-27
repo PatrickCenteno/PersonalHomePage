@@ -28,6 +28,21 @@
 	align-items:center;
 }
 
+#contactUrl{
+	padding-left: 10px;
+}
+
+#footer{
+	padding:40px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#footerContent{
+	display: flex;
+	flex direction: row;
+}
+
 .contentList{
 	padding: 15px;
 }
