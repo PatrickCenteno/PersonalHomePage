@@ -26,16 +26,20 @@
 
 	<section id="content">
 		<h2 class="contentList">College</h2>
-		<h3 class="contentList slideLeft">Brooklyn College of the City University of New York</h3>
-		<h3 class="contentList slideLeft">Bachelor's Degree in Computer Science - GPA 3.2</h3>
+		<div class="container">
+			<div class="contentList slideLeft">Brooklyn College of the City University of New York</div>
+			<div class="contentList slideLeft">Bachelor's Degree in Computer Science - GPA 3.2</div>
+		</div>
 		
 		<div id="courseListTitle">
 			<h2 id="courseHeader">Relevant Courses</h2>
 		</div>	
 
-		{% for c in course_list %}
-			<h3 class="contentList slideLeft">{{ c[1] }}</h3>
-		{% endfor %}
+		<div class="container">
+			{% for c in course_list %}
+				<div class="contentList slideLeft">{{ c[1] }}</div>
+			{% endfor %}
+		</div>
 	</section>
 
 </body>
