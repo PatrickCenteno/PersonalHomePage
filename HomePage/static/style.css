@@ -1,4 +1,14 @@
-#nameTitle{
+@font-face{
+	font-family: Roboto-Light;
+	src: url(Roboto-Light.ttf);
+}
+
+body {
+	font-family: Roboto-Light;
+}
+
+
+body #nameTitle{
 	color: #ffffff;
 	background-color: #000000;
 	display: flex;
@@ -35,12 +45,17 @@
 }
 
 #content{
-	padding-top: 50px;
-	padding-bottom: 50px;
-	display: flex;
+	/*display: flex;
 	justify-content: center;
 	flex-direction: column;
-	align-items:center;
+	align-items:center;*/
+}
+
+.row-fluid .contentGrid{
+	padding: 75px;
+	font-size: 32px;
+	display: flex;
+	justify-content:center;
 }
 
 #content a{
@@ -53,7 +68,7 @@
 }
 
 #footer{
-	padding:40px;
+	padding:75px;
 	display: flex;
 	justify-content: flex-end;
 	color: #ffffff;
