@@ -28,7 +28,9 @@
 
 	<section id="content">
 		{% for p in project_list %}
-			<h3 class="contentList slideLeft">{{ p[1] }}</h3>
+			<h3 class="contentList slideLeft">{{ p[1] }}
+				<a href="{{ p[2] }}"> Link</a>
+			</h3>
 		{% endfor %}
 	</section>
 
