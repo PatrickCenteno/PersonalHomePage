@@ -53,17 +53,27 @@ def admin_page():
 
 # funtion to get time an date to store as cookie
 def get_time_and_date():
+	# bool var to determine if am or pm is displayed
+	show_am = True
+
 	t = time.localtime(time.time())
-	month = str(t.tm_mon)
-	day = str(t.tm_mday)
-	year = str(t.tm_year)
-	hour = str(t.tm_hour)
+	month = t.tm_mon
+	day = t.tm_mday
+	year = t.tm_year
+	hour = t.tm_hour
+	min = t.tm_min
+
+	# uses % to conver 24 hour time to 12 hour time
+	if hour > 12:
+		hour = t.tm_hour % 12
+		show_am = False
 
 	# Properly formats time to ensure theres a '0'
 	# infront of single digit minutes
-	if t.tm_min < 10:
+	if min < 10:
 		min = "0" + str(t.tm_min)
+		
+	if show_am:
+		return str(hour) + ":" + str(min) + " AM, " + str(month) + "/" + str(day) + "/" + str(year)
 	else:
-		min = str(t.tm_min)
-
-	return hour + ":" + min + ", " + month + "/" + day + "/" + year
+		return str(hour) + ":" + str(min) + " PM, " + str(month) + "/" + str(day) + "/" + str(year)
