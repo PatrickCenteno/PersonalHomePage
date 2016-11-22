@@ -13,6 +13,9 @@
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+
+
 	<!-- bootstrap js -->
 	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
 </head>
@@ -25,7 +28,7 @@
 
 	<section id="content">
 		{% for w in work_list %}
-			<h3 class="contentList slideLeft">{{ w[1] }}</h3>
+			<h3 class="workHeader contentList slideLeft">{{ w[1] }}</h3>
 			<div class="container">
 				<div class="contentList slideLeft"> {{ w[2] }}</div>
 				<div class="contentList slideLeft"> {{ w[3] }}</div>
@@ -33,6 +36,13 @@
 				<div class="contentList slideLeft"> {{ w[5] }}</div>
 			</div>
 		{% endfor %}
+	</section>
+
+	<section id="footer">
+		<div id="footerContent">
+			<div><strong>Powered by Flask</strong></div>
+			<a id="contactUrl" href="{{ url_for('show_contact_page') }}">Contact info</a>
+		</div>
 	</section>
 
 </body>

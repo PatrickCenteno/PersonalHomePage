@@ -1,12 +1,20 @@
 from HomePage import app
-from flask import render_template
+from flask import render_template, make_response, request
+from datetime import date, datetime
+import time
 
 import database
 
+''' gets cookie of timestamp for last date date visited 
+	sets that string as jira var to display on page 
+	gets current timestamp and replaces cookie with that date'''
 @app.route('/')
 def index():
-	#TODO display the index.html template
-	return render_template('index.html')
+	old_timestamp = request.cookies.get('date_visited')
+	response = make_response(render_template('index.html', date_visited=old_timestamp))
+	timestamp = get_time_and_date()
+	response.set_cookie('date_visited', timestamp)
+	return response
 
 @app.route('/education')
 def show_education():
@@ -42,3 +50,20 @@ def admin_page():
 
 	return render_template('admin.html', course_list=courses, language_list=languages, \
 			project_list=projects, work_list=work)
+
+# funtion to get time an date to store as cookie
+def get_time_and_date():
+	t = time.localtime(time.time())
+	month = str(t.tm_mon)
+	day = str(t.tm_mday)
+	year = str(t.tm_year)
+	hour = str(t.tm_hour)
+
+	# Properly formats time to ensure theres a '0'
+	# infront of single digit minutes
+	if t.tm_min < 10:
+		min = "0" + str(t.tm_min)
+	else:
+		min = str(t.tm_min)
+
+	return hour + ":" + min + ", " + month + "/" + day + "/" + year

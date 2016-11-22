@@ -14,6 +14,9 @@
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+
+
 	<!-- bootstrap js -->
 	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
 </head>
@@ -25,20 +28,27 @@
 	</section>
 
 	<section id="content">
-		<h2 class="contentList">College</h2>
+		<h2 class="contentList educationHeader">College</h2>
 		<div class="container">
 			<div class="contentList slideLeft">Brooklyn College of the City University of New York</div>
 			<div class="contentList slideLeft">Bachelor's Degree in Computer Science - GPA 3.2</div>
 		</div>
 		
 		<div id="courseListTitle">
-			<h2 id="courseHeader">Relevant Courses</h2>
+			<h2 class="educationHeader" id="courseHeader">Relevant Courses</h2>
 		</div>	
 
 		<div class="container">
 			{% for c in course_list %}
 				<div class="contentList slideLeft">{{ c[1] }}</div>
 			{% endfor %}
+		</div>
+	</section>
+
+	<section id="footer">
+		<div id="footerContent">
+			<div><strong>Powered by Flask</strong></div>
+			<a id="contactUrl" href="{{ url_for('show_contact_page') }}">Contact info</a>
 		</div>
 	</section>
 

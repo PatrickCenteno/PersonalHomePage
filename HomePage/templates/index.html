@@ -5,17 +5,16 @@
 	<!-- Include whatever css is needed -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 
-	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-
 	<!-- style page -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-
 
 	<!-- animations css page from http://www.justinaguilar.com/animations/# -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animations.css') }}">
 
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 
 	<!-- bootstrap js -->
 	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
@@ -24,8 +23,8 @@
 <body>
 	<section id="header">
 		<div id="nameTitle">
-			<h1 id="nameHeader" class="slideRight">Patrick Centeno</h1>
-			<div id="nameDescription" class="slideRight">Aspiring Web Developer</div>
+			<div id="nameHeader" class="slideRight">Patrick Centeno</div>
+			<h2 id="nameDescription" class="slideRight">Aspiring Web Developer</h2>
 		</div>
 	</section>
 
@@ -66,6 +65,7 @@
 			<div><strong>Powered by Flask</strong></div>
 			<a id="contactUrl" href="{{ url_for('show_contact_page') }}">Contact info</a>
 		</div>
+		<div>You last visited this site on {{ date_visited }}</div>
 	</section>
 
 </body>
