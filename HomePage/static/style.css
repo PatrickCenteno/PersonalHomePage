@@ -43,10 +43,11 @@ body #nameTitle{
 	padding: 25px;
 }
 
-#contactInfo .container{
+#contactInfo{
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+	align-items: center;
 }
 
 #content{
