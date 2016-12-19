@@ -51,6 +51,24 @@ def admin_page():
 	return render_template('admin.html', course_list=courses, language_list=languages, \
 			project_list=projects, work_list=work)
 
+#temporary view
+@app.route('/addColorToDB')
+def add_color_sql():
+	#database.add_colors_table()
+	colors = database.get_colors()
+
+	print 'Testing if colors is loaded'
+	for c in colors:
+		print c
+	return 'printing to console'
+
+@app.route('/setColors/<colorOne>/<colorTwo>')
+def set_colors(colorOne, colorTwo):
+	database.set_color(colorOne, colorTwo)
+	return 'test color numbers set'
+
+
+
 # funtion to get time an date to store as cookie
 def get_time_and_date():
 	# bool var to determine if am or pm is displayed

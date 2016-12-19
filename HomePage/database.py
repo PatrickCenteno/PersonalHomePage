@@ -40,6 +40,13 @@ def initdb_command():
 
 ''' Adding functions '''
 
+#temporary add table function
+# def add_colors_table():
+# 	db = get_db()
+# 	db.execute('create table colors( id integer primary key autoincrement, colorOne integer not null, colorTwo integer nut null )')
+# 	db.commit()
+# 	print 'color table query was executed'
+
 # #temporary function
 # def add_pass_to_db(password):
 # 	db = get_db()
@@ -75,6 +82,19 @@ def add_project(project, link):
 	db.commit()
 	return 'Added project' 
 
+#Set the two colors for the site
+def set_color(color_one, color_two):
+	db = get_db()
+
+	# Remove whatever colors are stored in there currently
+	db.execute('DELETE FROM colors')
+	db.commit()
+
+	# Store current colors
+	db.execute('INSERT into colors (colorOne, colorTwo) values(?, ?)', (color_one, color_two, ))
+	db.commit()
+
+
 ''' Get Functions '''
 
 #Gets all courses
@@ -106,9 +126,16 @@ def get_password():
 	cursor = db.execute('SELECT password FROM pass')
 	return cursor.fetchall()
 
+def get_colors():
+	db = get_db()
+	cursor = db.execute('SELECT * FROM colors')
+	return cursor.fetchall()
+
 ''' Delete Functions '''
 
 #Table truncating function
+#There is no truncate command in sqlite. This can hopefully be implemented on the live server
+#when Postgresql or MySql is being utilized
 #If there are no entries in the table, it truncates it so the auto-increment id resets
 def truncate_table(table_name, db):
 	size = db.execute('SELECT MAX(ID) FROM ?', (table_name, ))
