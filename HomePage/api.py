@@ -49,6 +49,9 @@ def add_info():
 		database.add_work_experience(request.form['place'], request.form['location'], \
 				request.form['time_period'], request.form['role'], request.form['description'])
 		return 'Work Info added'
+	elif table == 'colors':
+		database.set_color(request.form['color_one'], request.form['color_two'])
+		return 'colors changed'
 	else:
 		return 'invalid post request'
 

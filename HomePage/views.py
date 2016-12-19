@@ -10,8 +10,12 @@ import database
 	gets current timestamp and replaces cookie with that date'''
 @app.route('/')
 def index():
+	colors = database.get_colors()
+	for c in colors:
+		print c
+
 	old_timestamp = request.cookies.get('date_visited')
-	response = make_response(render_template('index.html', date_visited=old_timestamp))
+	response = make_response(render_template('index.html', date_visited=old_timestamp, color_list=colors))
 	timestamp = get_time_and_date()
 	response.set_cookie('date_visited', timestamp)
 	return response
@@ -47,25 +51,26 @@ def admin_page():
 	languages = database.get_languages()
 	projects = database.get_projects()
 	work = database.get_work_experience()
+	colors = database.get_colors()
 
 	return render_template('admin.html', course_list=courses, language_list=languages, \
 			project_list=projects, work_list=work)
 
-#temporary view
-@app.route('/addColorToDB')
-def add_color_sql():
-	#database.add_colors_table()
-	colors = database.get_colors()
+# #temporary view
+# @app.route('/addColorToDB')
+# def add_color_sql():
+# 	#database.add_colors_table()
+# 	colors = database.get_colors()
 
-	print 'Testing if colors is loaded'
-	for c in colors:
-		print c
-	return 'printing to console'
+# 	print 'Testing if colors is loaded'
+# 	for c in colors:
+# 		print c
+# 	return 'printing to console'
 
-@app.route('/setColors/<colorOne>/<colorTwo>')
-def set_colors(colorOne, colorTwo):
-	database.set_color(colorOne, colorTwo)
-	return 'test color numbers set'
+# @app.route('/setColors/<colorOne>/<colorTwo>')
+# def set_colors(colorOne, colorTwo):
+# 	database.set_color(colorOne, colorTwo)
+# 	return 'test color numbers set'
 
 
 

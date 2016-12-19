@@ -16,6 +16,21 @@
 </head>
 <body>
 	<section id="information">
+
+    <h1 class="adminHeaders">Page Primary Color</h1>
+    <select id="primaryColorSelect">
+      <option id="000000">Black</option>
+      <option id="CF1919">Red</option>
+      <option id="1E2ECE">Blue</option>
+    </select>
+
+    <h1 class="adminHeaders">Secondary Colors</h1>
+    <select id="secondaryColorSelect">
+      <option id="FFFFFF">White</option>
+      <option id="9B9B9E">Gray</option>
+      <option id="E783D4">Pink</option>
+    </select>
+
 		<h1 class="adminHeaders">Course Information</h1>
       <ul class="list-group courseList">
       {% for c in course_list %}
