@@ -1,9 +1,11 @@
 from HomePage import app
-from flask import render_template, make_response, request
+from flask import render_template, make_response, request, session
 from datetime import date, datetime
-import time
+import time, os, hashlib
 
 import database
+
+# Must retreive primary and sceondary color for every route
 
 ''' gets cookie of timestamp for last date date visited 
 	sets that string as jira var to display on page 
@@ -12,7 +14,7 @@ import database
 def index():
 	colors = database.get_colors()
 	for c in colors:
-		print c
+		print str(c[1]) + " " + str(c[2])
 
 	old_timestamp = request.cookies.get('date_visited')
 	response = make_response(render_template('index.html', date_visited=old_timestamp, color_list=colors))
@@ -22,39 +24,60 @@ def index():
 
 @app.route('/education')
 def show_education():
+	colors = database.get_colors()
 	courses = database.get_courses()
-	return render_template('education.html', course_list=courses)
+	return render_template('education.html', course_list=courses, color_list=colors)
 
 @app.route('/projects')
 def show_projects():
+	colors = database.get_colors()
 	projects = database.get_projects()
-	return render_template('projects.html', project_list=projects)
+	return render_template('projects.html', project_list=projects, color_list=colors)
 
 @app.route('/work')
 def show_work():
+	colors = database.get_colors()
 	work = database.get_work_experience()
-	return render_template('work.html', work_list=work)
+	return render_template('work.html', work_list=work, color_list=colors)
 
 @app.route('/languages')
 def show_languages():
+	colors = database.get_colors()
 	languages = database.get_languages()
-	return render_template('languages.html', language_list=languages)
+	return render_template('languages.html', language_list=languages, color_list=colors)
 
 @app.route('/contact')
 def show_contact_page():
+	colors = database.get_colors()
 	return render_template('contact.html')
 
 @app.route('/admin')
 def admin_page():
-	#will have all info from db passed into it
-	courses = database.get_courses()
-	languages = database.get_languages()
-	projects = database.get_projects()
-	work = database.get_work_experience()
-	colors = database.get_colors()
+	# Displays the password modal
+	# Function is api.py contains logic about what to do upon entry of password
+	return render_template('modalDisplay.html')
 
-	return render_template('admin.html', course_list=courses, language_list=languages, \
-			project_list=projects, work_list=work)
+@app.route('/admin_display')
+def admin_display():
+	# requires session to be set for it to work
+	if session['successful_load'] == 'true':
+		# obtain all necessary information for the admin page and 
+		# render the admin template
+		#will have all info from db passed into it
+		courses = database.get_courses()
+		languages = database.get_languages()
+		projects = database.get_projects()
+		work = database.get_work_experience()
+		colors = database.get_colors()
+
+		# Remove session
+		session['successful_load'] = 'false'
+		return render_template('admin.html', course_list=courses, language_list=languages, \
+				project_list=projects, work_list=work)
+	else:
+		return 'You are not authorized to access this page'
+	
+
 
 # #temporary view
 # @app.route('/addColorToDB')
@@ -74,8 +97,10 @@ def admin_page():
 
 
 
+
 # funtion to get time an date to store as cookie
 def get_time_and_date():
+
 	# bool var to determine if am or pm is displayed
 	show_am = True
 

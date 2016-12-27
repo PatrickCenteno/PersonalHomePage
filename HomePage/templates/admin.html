@@ -19,17 +19,19 @@
 
     <h1 class="adminHeaders">Page Primary Color</h1>
     <select id="primaryColorSelect">
-      <option id="000000">Black</option>
-      <option id="CF1919">Red</option>
-      <option id="1E2ECE">Blue</option>
+      <option value="000000">Black</option>
+      <option value="CF1919">Red</option>
+      <option value="1E2ECE">Blue</option>
     </select>
 
     <h1 class="adminHeaders">Secondary Colors</h1>
     <select id="secondaryColorSelect">
-      <option id="FFFFFF">White</option>
-      <option id="9B9B9E">Gray</option>
-      <option id="E783D4">Pink</option>
+      <option value="FFFFFF">White</option>
+      <option value="9B9B9E">Gray</option>
+      <option value="E783D4">Pink</option>
     </select>
+
+    <button type="button" id="changeColorButton" class="btn btn-primary">Change Colors</button>
 
 		<h1 class="adminHeaders">Course Information</h1>
       <ul class="list-group courseList">
@@ -81,7 +83,7 @@
 	</section>
 
 	<!-- Modal for password -->
-    <div class="modal fade" id="passwordAlertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <!--  <div class="modal fade" id="passwordAlertModal" data-backdrop="static" data-keyboard="false"tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -99,7 +101,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Modal for course submission -->
     <div class="modal fade" id="courseSubmissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

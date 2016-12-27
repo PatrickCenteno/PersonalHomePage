@@ -33,11 +33,13 @@ $(document).ready( function(){
 			url:"http://localhost:5000/check_password", // Hardcoded for dev purposes
 			data:{password:$passwordInput}
 		}).then(function(response) {
-			if (response === "password correct"){
-				$("#passwordAlertModal").modal("hide");
-			}else{
+			if (response === "incorrect password"){
 				$("#passwordSubmitAlert").show();
 				$("#modalPasswordBox").val("");
+			}else{
+				// Display contents of the page and hide the modal
+				$("#passwordAlertModal").modal("hide");
+				window.location = "http://localhost:5000/admin_display";
 			}
 		});
 	});
@@ -45,6 +47,22 @@ $(document).ready( function(){
 	/**
 	 * Event Handlers for submission buttons
 	 **/
+
+	// Color Select 
+	$("#changeColorButton").click ( function (){
+		$primaryColor = $("#primaryColorSelect option:selected").val();
+		$secondaryColor = $("#secondaryColorSelect option:selected").val();
+
+		// Send hex values to server with ajax request
+		$.ajax({
+			type:'post',
+			url:'http://localhost:5000/add_info', // Hardcoded for dev purposes
+			data:{table_name:'colors', color_one:$primaryColor, color_two:$secondaryColor}
+		}).then(function(response){
+			alert("Colors changed");
+		})
+	});
+
 
 	// Add course button
 	$("#addCourseButton").click( function() {

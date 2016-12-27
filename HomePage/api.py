@@ -1,5 +1,5 @@
 from HomePage import app
-from flask import render_template, request
+from flask import render_template, request, redirect, session
 import database
 
 import uuid
@@ -27,7 +27,8 @@ def check_password():
 
 	#hash and check with salt
 	if hashed_pass == hashlib.sha256(salt.encode() + password.encode()).hexdigest():
-		return 'password correct'
+		session['successful_load'] = 'true'
+		return 'correct password'
 	else:
 		return 'incorrect password'
 
@@ -75,6 +76,7 @@ def delete_info():
 		return 'Work Info removed'
 	else:
 		return 'invalid post request'
+	
 
 
 # @app.route('/add_table')
