@@ -23,7 +23,11 @@
 <body>
 	<section id="header">
 		{% for color in color_list %}
-		<div id="nameTitle" style="background-color: #{{ color[1] }};">
+			{% if color[1] == 0 %}
+			<div id="nameTitle" style="background-color: #000000;">
+			{% else %}
+			<div id="nameTitle" style="background-color: #{{ color[1] }};">
+			{% endif %}
 		{% endfor %}
 			<div id="nameHeader" class="slideRight">Patrick Centeno</div>
 			<h2 id="nameDescription" class="slideRight">Aspiring Web Developer</h2>
@@ -64,7 +68,13 @@
 		</div>
 	</section>
 
-	<section id="footer">
+	{% for color in color_list %}
+		{% if color[1] == 0 %}
+		<section id="footer" style="background-color: #000000;">
+		{% else %}
+		<section id="footer" style="background-color: #{{ color [1] }};">
+		{% endif %}
+	{% endfor %}
 		<div id="footerContent">
 			<div><strong>Powered by Flask</strong></div>
 			<a id="contactUrl" href="{{ url_for('show_contact_page') }}">Contact info</a>

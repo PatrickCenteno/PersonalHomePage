@@ -80,7 +80,7 @@ body #nameTitle{
 	justify-content: flex-end;
 	flex-direction: column;
 	color: #ffffff;
-	background-color: #000000;
+	/*background-color: #000000;*/
 }
 
 #footerContent{
