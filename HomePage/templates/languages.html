@@ -21,18 +21,36 @@
 </head>
 <body>
 	<section id="header">
-		<div id="nameTitle">
+		<!-- <div id="nameTitle"> -->
+		{% for color in color_list %}
+			{% if color[1] == 0 %}
+			<div id="nameTitle" style="background-color: #000000;">
+			{% else %}
+			<div id="nameTitle" style="background-color: #{{ color[1] }};">
+			{% endif %}
+		{% endfor %}
 			<h1 id="nameHeader">Patrick Centeno</h1>
+			<h2 id="nameDescription" class="slideRight">Aspiring Web Developer</h2>
 		</div>
 	</section>
 
-	<section id="content">
+	<!-- <section id="content"> -->
+	{% for color in color_list %}
+	<section id="content" style="background-color: #{{ color[2] }};">
+	{% endfor %}
 		{% for l in language_list %}
 			<h3 class="contentList slideLeft">{{ l[1] }}</h3>
 		{% endfor %}
 	</section>
 
-	<section id="footer">
+	<!-- <section id="footer"> -->
+	{% for color in color_list %}
+		{% if color[1] == 0 %}
+		<section id="footer" style="background-color: #000000;">
+		{% else %}
+		<section id="footer" style="background-color: #{{ color [1] }};">
+		{% endif %}
+	{% endfor %}
 		<div id="footerContent">
 			<div><strong>Powered by Flask</strong></div>
 			<a id="contactUrl" href="{{ url_for('show_contact_page') }}">Contact info</a>

@@ -49,7 +49,7 @@ def show_languages():
 @app.route('/contact')
 def show_contact_page():
 	colors = database.get_colors()
-	return render_template('contact.html')
+	return render_template('contact.html', color_list=colors)
 
 @app.route('/admin')
 def admin_page():

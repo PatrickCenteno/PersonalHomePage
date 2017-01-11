@@ -20,12 +20,23 @@
 </head>
 <body>
 	<section id="header">
-		<div id="nameTitle">
+		<!-- <div id="nameTitle"> -->
+		{% for color in color_list %}
+			{% if color[1] == 0 %}
+			<div id="nameTitle" style="background-color: #000000;">
+			{% else %}
+			<div id="nameTitle" style="background-color: #{{ color[1] }};">
+			{% endif %}
+		{% endfor %}
 			<h1 id="nameHeader">Patrick Centeno</h1>
+			<h2 id="nameDescription" class="slideRight">Aspiring Web Developer</h2>
 		</div>
 	</section>
 
-	<section id="content">
+	<!-- <section id="content"> -->
+	{% for color in color_list %}
+	<section id="content" style="background-color: #{{ color[2] }};">
+	{% endfor %}
 		<div id="contactInfo" class="container">
 			<h1><strong>Email me </strong> <a href="mailto:pcenteno3492@gmail.com"><strong>here</strong></a></h1>
 			<h1><a href="https://github.com/PatrickCenteno">Check out my github</a></h1>
